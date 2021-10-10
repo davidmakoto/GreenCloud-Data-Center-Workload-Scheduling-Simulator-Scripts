@@ -2,7 +2,7 @@
 Scripts used to aid in running different types of simulations of workload scheduling algorithms using GreenCloud simulator. Part of Summer research under Dr. Xunfei Jiang funded by the Louis Stokes Alliance for Minotiry Participation program.
 
 # Usage
-Two primary scripts are included, one that automates the running different configurations and creating unique output directories, and the second that plots trace files. Below are more details as well as screenshots of directory configuration as well as the command to the run scripts.
+Two primary scripts are included, one that automates the running different configurations and creation of unique output directories, and the second that plots trace files. Below are more details as well as screenshots of directory configuration as well as the command to the run scripts.
 
 
 ### run_sims.py
