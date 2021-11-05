@@ -35,7 +35,7 @@ for scheduler_name in schedulers:
 #		  "--topology=simple_debug" +
 		  " --scheduler=" + scheduler_name +
 		  " --trace-dir=/traces/" + trace_local_dir +
-		  " --clean-old=true"  # white space before each --
+		  " --clean-old=false"  # white space before each --
 		  )
 			  
 			  
