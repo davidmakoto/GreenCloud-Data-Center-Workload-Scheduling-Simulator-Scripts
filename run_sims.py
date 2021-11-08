@@ -6,37 +6,42 @@
 
 import os
 
-								        # NCore NAggr NAccess NRackHosts
-topologies = ("three-tier high-speed", 					# 2 2*NCore 256 3 
-	  	"three-tier debug", 				# 1 3 48
-	  	"three-tier heterogenous debug",  		# 1 3 48
-		# "small_dc", 					# 1 3 48
-	  	"full_scale_dc"				# 8 64 3
-	  	# "default" 					# 8 64 3
-	  	, "three-tier"  # ask about this
- 	      )
 
-#task_types = ()
 schedulers = ("Green", "RoundRobin", "Random", "HEROS", "RandDENS", "BestDENS")
+											    # NCore NAggr NAccess NRackHosts
+topologies = ("three-tier\ debug", 				# 1 3 48 	
+			  "three-tier\ heterogenous\ debug",  # 1 3 48		  
+			  "three-tier\ high-speed", 			# 2 2*NCore 256 3 
+			  "default" 						# 8 64 3
+			  # "small_dc", 					# 1 3 48
+ 			  # "full_scale_dc"				    # 8 64 3
+			  # "three-tier"  # ask about this
+ 			  )
+
+
 #deadline = ()
 #trace_out_dirs = ()
+#task_types = ()
 trace_local_dir = ""
 
 # todo: figure out fully configuration details of topologies (non default configs in various .tcl files such as  setup_params.tcl) then add to loop			  
 
 # run config with schedulers
 for scheduler_name in schedulers:
-	print("\n\n\n\n\nNow running simulation for: " + scheduler_name + " scheduler\n\n\n\n\n")
-	# creating local trace dir for organization - also stops deletion due to unique dir
-	trace_local_dir = scheduler_name + "_" + topologies[-1]
+	for top_name in topologies:	
+		print("------------------------------------------------------------\n\n\n\n\n")
+		print("Now running simulation for: " + scheduler_name + " scheduler with " + top_name + " topology") 
+		print("\n\n\n\n\n------------------------------------------------------------")
+		# creating local trace dir for organization - also stops deletion due to unique dir
+		trace_local_dir = scheduler_name + "-" + top_name
 	
-	# runs config in terminal
-	os.system("./run" + 
-#		  "--topology=simple_debug" +
-		  " --scheduler=" + scheduler_name +
-		  " --trace-dir=/traces/" + trace_local_dir +
-		  " --clean-old=false"  # white space before each --
-		  )
+		# runs config in terminal
+		os.system("./run" + 
+				  " --topology=" + top_name +
+				  " --scheduler=" + scheduler_name +
+				  " --trace-dir=/traces/" + trace_local_dir +
+				  " --clean-old=false"
+				  )
 			  
 			  
 			  
