@@ -10,5 +10,6 @@ Runs GreenCloud simulator via command line options with a number of different op
 ![run sims](https://user-images.githubusercontent.com/20344260/136677369-cc5ea3fc-dbb4-40f2-8d72-a1e1d26eb24c.png)
 
 ### plot_trace.py
-Simple script that plots a two column trace file onto the x-y axis using plotly.express library. Trace file directory must be hardcoded along with column titles (which are not clearly specified in output trace files). This file must also be placed in the /home/greencloud/greencloud directory (same as "run" executable, shown below).
+Simple script that plots a two column trace file onto the x-y axis using plotly.express library. Trace file directory must be hardcoded along with column titles (which are not clearly specified in output trace files). 
+Update: plot_trace.py no longer necessary to extract comma seperated values from space seperated values. Can bypass plot_trace.py entirely and copy paste data into excel/sheets. For google sheets, paste entire .tr file into single cell, then select Data->Split text to columns. Keeping for reference to further automate plotting of data/
 ![plot traces](https://user-images.githubusercontent.com/20344260/136677373-32acd97c-0c5d-4329-8794-5601ccc95a09.png)
