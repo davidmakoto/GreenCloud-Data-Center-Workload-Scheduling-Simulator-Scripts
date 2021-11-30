@@ -7,15 +7,15 @@
 import os
 
 
-schedulers = ("Green", "RoundRobin", "Random", "HEROS", "RandDENS", "BestDENS")
-											    # NCore NAggr NAccess NRackHosts
-topologies = ("three-tier\ debug", 				# 1 3 48 	
+schedulers = ("Green", "RoundRobin", "Random", "RandDENS", "BestDENS") #, "HEROS")  # heros removed because algo crashes VM
+							      # NCore NAggr NAccess NRackHosts
+topologies = ("three-tier\ debug", 			      # 1 3 48 	
 			  "three-tier\ heterogenous\ debug",  # 1 3 48		  
-			  "three-tier\ high-speed", 			# 2 2*NCore 256 3 
-			  "default" 						# 8 64 3
-			  # "small_dc", 					# 1 3 48
- 			  # "full_scale_dc"				    # 8 64 3
-			  # "three-tier"  # ask about this
+			  "three-tier\ high-speed", 	      # 2 2*NCore 256 3 
+			  "default" 			      # 8 64 3
+			  # "small_dc", 		      # 1 3 48
+ 			  # "full_scale_dc"		      # 8 64 3
+			  # "three-tier"  
  			  )
 
 
@@ -42,17 +42,3 @@ for scheduler_name in schedulers:
 				  " --trace-dir=/traces/" + trace_local_dir +
 				  " --clean-old=false"
 				  )
-			  
-			  
-			  
-# todo: once dc topology figured out, can add portions of the following to the loop 
-#print("\n\nNow running simulation for: " + schedulers[0] + " scheduler\n\n")
-#os.system("echo Now running simulation for the " + scheduler + " scheduler")
-#trace_local_dir = schedulers[0] + "_" + topologies[-1]
-
-#os.system("./run " +
-#			  "--topology=three-tier" +
-#			  "--scheduler=" + schedulers[0] 
-#			  + " --trace-dir=/traces/" + trace_local_dir
-			  # add in trace file paths next
-#			  )
